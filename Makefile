@@ -52,8 +52,13 @@ migrate-action:
 	-database postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@to_do_app-postgres:5432/${POSTGRES_DB}?sslmode=disable \
 	"$(action)"
 
+
 to-do-app-run:
 	@export LOGGER_FOLDER=${PROJECT_ROOT}/out/logs && \
-	export POSTGRES_HOST=localhost && \
-	go mod tidy && \
+	export HOST=localhost && \
+	export PORT=5432 && \
+	export USER=${POSTGRES_USER} && \
+	export PASSWORD=${POSTGRES_PASSWORD} && \
+	export DB=${POSTGRES_DB} && \
+	export TIMEOUT=${POSTGRES_TIMEOUT} && \
 	go run cmd/to-do-app/main.go

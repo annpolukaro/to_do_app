@@ -1,0 +1,2 @@
+2026-04-10T19-41-36.890515	DEBUG	to-do-app/main.go:37	initialing postgres connection postgres connection pool
+2026-04-10T19-41-36.907826	FATAL	to-do-app/main.go:44	failed to init postgres connection pool	{"error": "pgxpool ping: failed to connect to `user=test-user-123 database=test-db`: 127.0.0.1:5432 (localhost): server error: FATAL: could not open file \"global/pg_filenode.map\": Permission denied (SQLSTATE 42501)"}

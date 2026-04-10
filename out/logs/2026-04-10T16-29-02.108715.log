@@ -1,0 +1,2 @@
+2026-04-10T19-29-02.110244	DEBUG	to-do-app/main.go:37	initialing postgres connection postgres connection pool
+2026-04-10T19-29-02.202303	FATAL	to-do-app/main.go:44	failed to init postgres connection pool	{"error": "pgxpool ping: failed to connect to `user=test-user-123 database=test-db`: 127.0.0.1:5432 (localhost): failed SASL auth: FATAL: password authentication failed for user \"test-user-123\" (SQLSTATE 28P01)"}
