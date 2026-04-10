@@ -1,0 +1,2 @@
+2026-04-10T19-38-37.712620	DEBUG	to-do-app/main.go:37	initialing postgres connection postgres connection pool
+2026-04-10T19-38-37.715666	FATAL	to-do-app/main.go:44	failed to init postgres connection pool	{"error": "pgxpool ping: failed to connect to `user=test-user-123 database=test-db`: 127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused"}
