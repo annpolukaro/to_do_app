@@ -25,7 +25,7 @@ env-port-forward:
 env-port-close:
 	@docker compose down port-forwarder
 
-	
+
 migrate-create: ## PostgreSQL: Создать новую версию схемы данных
 	@if [ -z "$(seq)" ]; then \
 		echo "Отсутсвует необходимый параметр seq. Пример: make migrate-create seq=init"; \
@@ -52,3 +52,8 @@ migrate-action:
 	-database postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@to_do_app-postgres:5432/${POSTGRES_DB}?sslmode=disable \
 	"$(action)"
 
+to-do-app-run:
+	@export LOGGER_FOLDER=${PROJECT_ROOT}/out/logs && \
+	export POSTGRES_HOST=localhost && \
+	go mod tidy && \
+	go run cmd/to-do-app/main.go
